@@ -6,3 +6,8 @@ export interface IGameObject {
   dimension: IDimension
   position: IPosition
 }
+
+export interface IGameObjectProps {
+  dimension: IDimension
+  position: IPosition
+}
