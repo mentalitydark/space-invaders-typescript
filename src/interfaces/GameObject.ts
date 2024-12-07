@@ -1,5 +1,5 @@
-import { IDimension } from "./Dimension";
-import { IPosition } from "./Position";
+import { IDimension } from "./Dimension"
+import { IPosition } from "./Position"
 
 export interface IGameObject {
   id: string
