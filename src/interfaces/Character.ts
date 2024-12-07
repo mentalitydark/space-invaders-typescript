@@ -1,12 +1,12 @@
-import { IGameObject, IGameObjectProps } from "./GameObject";
-import { IHealth } from "./Health";
+import { IGameObject, IGameObjectProps } from "./GameObject"
+import { IHealth } from "./Health"
 
 export interface ICharacter extends IGameObject {
-  name: string;
+  name: string
   health: IHealth
 }
 
 export interface ICharacterProps extends IGameObjectProps {
-  name: string;
+  name: string
   health: number
 }
