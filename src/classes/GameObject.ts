@@ -1,6 +1,6 @@
 import { IDimension, IGameObject, IGameObjectProps, IPosition } from "../interfaces"
 
-export class GameObject implements IGameObject {
+export abstract class GameObject implements IGameObject {
   private _id
   private _dimension
   private _position
