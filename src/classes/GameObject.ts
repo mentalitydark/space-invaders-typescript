@@ -1,15 +1,17 @@
 import { IDimension, IGameObject, IGameObjectProps, IPosition } from "../interfaces"
+import { Dimension } from "./Dimension"
+import { Position } from "./Position"
 
 export abstract class GameObject implements IGameObject {
-  private _id
-  private _dimension
-  private _position
+  private _id: string
+  private _dimension: IDimension
+  private _position: IPosition
 
   public constructor({ dimension, position }: IGameObjectProps) {
     this._id = crypto.randomUUID()
     
-    this._dimension = dimension
-    this._position = position
+    this._dimension = new Dimension(dimension)
+    this._position = new Position(position)
   }
 
   get id(): string { return this._id }
