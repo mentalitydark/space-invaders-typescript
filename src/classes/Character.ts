@@ -1,12 +1,12 @@
 import { TCharacterType } from "../enums"
-import { ICharacter, ICharacterProps } from "../interfaces"
+import { ICharacter, ICharacterProps, IHealth } from "../interfaces"
 import { GameObject } from "./GameObject"
 import { Health } from "./Health"
 
 export abstract class Character extends GameObject implements ICharacter {
   protected abstract _type: TCharacterType
-  private _name
-  private _health
+  private _name: string
+  private _health: IHealth
 
   public constructor({ name, health, ...GameObjectProps }: ICharacterProps) {
     super(GameObjectProps)
