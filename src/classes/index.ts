@@ -1,3 +1,6 @@
+export * from "./Character"
 export * from "./Dimension"
 export * from "./GameObject"
+export * from "./Health"
+export * from "./Player"
 export * from "./Position"
