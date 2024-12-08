@@ -1,5 +1,5 @@
-import { IDimension } from "./Dimension"
-import { IPosition } from "./Position"
+import { IDimension, IDimensionProps } from "./Dimension"
+import { IPosition, IPositionProps } from "./Position"
 
 export interface IGameObject {
   id: string
@@ -8,6 +8,6 @@ export interface IGameObject {
 }
 
 export interface IGameObjectProps {
-  dimension: IDimension
-  position: IPosition
+  dimension: IDimensionProps
+  position: IPositionProps
 }
