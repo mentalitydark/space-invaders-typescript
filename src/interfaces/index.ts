@@ -1,4 +1,5 @@
 export * from "./Character"
+export * from "./Command"
 export * from "./Dimension"
 export * from "./GameObject"
 export * from "./Health"
