@@ -1,3 +1,4 @@
+import { EGameState } from "../../enums"
 import { ICommand, IObserver, IPlayer } from "../../interfaces"
 
 export class PlayerObserver implements IObserver {
@@ -9,6 +10,10 @@ export class PlayerObserver implements IObserver {
   }
 
   public update(command: ICommand): void {
+    if (command.gameState !== EGameState.PLAYING) {
+      return
+    }
+
     if (command.keys.ArrowUp) {
       this.player.position.y = this.player.position.y + 1
     }
