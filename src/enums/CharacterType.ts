@@ -1,4 +1,4 @@
-export enum TCharacterType {
+export enum ECharacterType {
   "PLAYER",
   "ENEMY"
 }
