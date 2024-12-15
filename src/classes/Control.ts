@@ -24,10 +24,6 @@ export class Control implements IControl {
     })
   }
 
-  get game(): IGame { return this._game }
-  get keys() { return this._keys }
-  get observers() { return this._observers }
-
   public addObserver(observer: IObserver): void {
     this.observers.set(observer.id, observer)
   }
@@ -39,4 +35,8 @@ export class Control implements IControl {
   public notifyObservers(command: ICommand) {
     this.observers.forEach(observer => observer.update(command))
   }
+
+  get game(): IGame { return this._game }
+  get keys() { return this._keys }
+  get observers() { return this._observers }
 }
