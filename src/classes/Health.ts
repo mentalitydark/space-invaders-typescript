@@ -9,10 +9,6 @@ export class Health implements IHealth {
     this._current = value
   }
 
-  get max(): number { return this._max }
-  get current(): number { return this._current }
-  get isAlive(): boolean { return this._current > 0 }
-
   public takeDamage(amount: number) {
     this._current -= amount
   }
@@ -24,4 +20,8 @@ export class Health implements IHealth {
       this._current = this._max
     }
   }
+  
+  get max(): number { return this._max }
+  get current(): number { return this._current }
+  get isAlive(): boolean { return this._current > 0 }
 }
