@@ -10,10 +10,6 @@ export class FramePerSeconds implements IFramePerSeconds {
     this._currentTime = performance.now()
   }
 
-  get lastTime(): DOMHighResTimeStamp { return this._lastTime }
-  get currentTime(): DOMHighResTimeStamp { return this._currentTime }
-  get value(): number { return this._value }
-
   public update(): void {
     this._lastTime = this._currentTime
     this._currentTime = performance.now()
@@ -23,5 +19,7 @@ export class FramePerSeconds implements IFramePerSeconds {
     this._value = Math.round(1 / seconds)
   }
 
-
+  get lastTime(): DOMHighResTimeStamp { return this._lastTime }
+  get currentTime(): DOMHighResTimeStamp { return this._currentTime }
+  get value(): number { return this._value }
 }
