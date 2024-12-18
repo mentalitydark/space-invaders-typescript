@@ -3,9 +3,9 @@ import { Dimension } from "./Dimension"
 import { Position } from "./Position"
 
 export abstract class GameObject implements IGameObject {
-  private _id: string
-  private _dimension: IDimension
-  private _position: IPosition
+  protected _id: string
+  protected _dimension: IDimension
+  protected _position: IPosition
 
   public constructor({ dimension, position }: IGameObjectProps) {
     this._id = crypto.randomUUID()
