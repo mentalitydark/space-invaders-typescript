@@ -5,8 +5,8 @@ import { Health } from "./Health"
 
 export abstract class Character extends GameObject implements ICharacter {
   protected abstract _type: ECharacterType
-  private _name: string
-  private _health: IHealth
+  protected _name: string
+  protected _health: IHealth
 
   public constructor({ name, health, ...GameObjectProps }: ICharacterProps) {
     super(GameObjectProps)
