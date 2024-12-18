@@ -3,6 +3,7 @@ export interface IDimension {
   height: number
   halfWidth: number
   halfHeight: number
+  json: { width: number, height: number }
 }
 
 export interface IDimensionProps {
