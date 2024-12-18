@@ -1,11 +1,13 @@
-import { IFramePerSeconds } from "../interfaces"
+import { IFramePerSeconds, IFramePerSecondsProps } from "../interfaces"
+import { TextObject } from "./TextObject"
 
-export class FramePerSeconds implements IFramePerSeconds {
+export class FramePerSeconds extends TextObject implements IFramePerSeconds {
   private _lastTime: DOMHighResTimeStamp
   private _currentTime: DOMHighResTimeStamp
-  private _value: number = 0
 
-  public constructor() {
+  public constructor(props: IFramePerSecondsProps) {
+    super(props)
+
     this._lastTime = 0
     this._currentTime = performance.now()
   }
@@ -16,10 +18,9 @@ export class FramePerSeconds implements IFramePerSeconds {
 
     const seconds = (this._currentTime - this._lastTime) / 1000
 
-    this._value = Math.round(1 / seconds)
+    this._value = String(Math.round(1 / seconds)).padStart(2, "0")
   }
 
   get lastTime(): DOMHighResTimeStamp { return this._lastTime }
   get currentTime(): DOMHighResTimeStamp { return this._currentTime }
-  get value(): number { return this._value }
 }

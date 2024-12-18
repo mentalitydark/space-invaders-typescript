@@ -20,7 +20,7 @@ export class Game implements IGame {
     this._control = new Control({ game: this })
     this.control.addObserver(new PlayerObserver(this._player))
 
-    this._FPS = new FramePerSeconds()
+    this._FPS = new FramePerSeconds({ value: "", dimension: { height: 10, width: 10 }, position: { x: 0, y: 0 }})
   }
 
   public update(): void {

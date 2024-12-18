@@ -1,7 +1,10 @@
-export interface IFramePerSeconds {
+import { ITextObject, ITextObjectProps } from "./TextObject"
+
+export interface IFramePerSeconds extends ITextObject {
   lastTime: DOMHighResTimeStamp
   currentTime: DOMHighResTimeStamp
-  value: number
 
   update(): void
 }
+
+export interface IFramePerSecondsProps extends ITextObjectProps {}
