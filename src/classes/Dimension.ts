@@ -13,6 +13,7 @@ export class Dimension implements IDimension {
   get height(): number { return this._height }
   get halfWidth(): number { return this.width / 2 }
   get halfHeight(): number { return this.height / 2 }
+  get json(): { width: number, height: number } { return { width: this._width, height: this._height } }
 
   set width(value: number) { this.width = value }
   set height(value: number) { this.height = value }
