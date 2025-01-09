@@ -1,3 +1,4 @@
+export * from "./Canvas"
 export * from "./Character"
 export * from "./Command"
 export * from "./Control"

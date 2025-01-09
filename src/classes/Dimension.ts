@@ -9,6 +9,10 @@ export class Dimension implements IDimension {
     this._height = height
   }
 
+  public static create(width: number, height: number): IDimension {
+    return new Dimension({ width, height })
+  }
+
   get width(): number { return this._width }
   get height(): number { return this._height }
   get halfWidth(): number { return this.width / 2 }
