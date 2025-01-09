@@ -1,31 +1,16 @@
-import { ConsoleDisplay, Enemy, Game, GameObjectRenderer, Player } from "./classes";
-import { EGameState } from "./enums";
+import { Dimension, Position } from "./classes"
+import { Canvas } from "./classes/Canvas"
 
-const player = new Player({
-  name: "Player",
-  health: 100,
-  dimension: { height: 100, width: 100 },
-  position: { x: 0, y: 0 },
-})
+const app = document.querySelector<HTMLDivElement>("#app")!
 
-const enemy = new Enemy({
-  name: "enemy",
-  health: 100,
-  dimension: { height: 100, width: 100 },
-  position: { x: 0, y: 0 },
-})
+const canvasElement = document.createElement('canvas')
+canvasElement.id = "game"
+canvasElement.width = 800
+canvasElement.height = 600
 
-const screen = { width: 800, height: 600 }
+app.append(canvasElement)
 
-const game = new Game({
-  player,
-  screen
-})
+const canvas = new Canvas(canvasElement)
+canvas.drawBackground()
 
-game.display = new ConsoleDisplay()
-
-game.state = EGameState.PLAYING
-game.start()
-
-game.display.addRenderer(0, new GameObjectRenderer(game.player))
-game.display.addRenderer(0, new GameObjectRenderer(enemy))
+canvas.fillRect("red", Position.create(10, 10), Dimension.create(10, 10))
